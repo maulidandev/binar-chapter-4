@@ -1,8 +1,8 @@
 function start(){
-    let playerScore = Math.floor(Math.random() * 100 + 1)
+    let playerScore = randomScore()
     setScore("player-number", playerScore)
 
-    let computerScore = Math.floor(Math.random() * 100 + 1)
+    let computerScore = randomScore()
     setScore("computer-number", computerScore)
 
     if(playerScore > computerScore){
@@ -25,4 +25,10 @@ function setWinner(text){
 function setScore(elementId, score){
     let scoreElement = document.getElementById(elementId)
     scoreElement.textContent = score
+}
+
+function randomScore(){
+    let score = Math.floor(Math.random() * 100 + 1)
+
+    return score
 }
