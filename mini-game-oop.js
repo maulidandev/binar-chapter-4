@@ -5,12 +5,17 @@ class Player{
     }
 
     randomScore(){
-        let score = Math.floor(Math.random() * 100 + 1)
+        let score = this.#random()
 
         let scoreElement = document.getElementById(this.elementId)
         scoreElement.textContent = score
 
         this.score = score
+    }
+
+    // tanda # menandakan function random di set menjadi private
+    #random(){
+        return Math.floor(Math.random() * 100 + 1)
     }
 }
 
